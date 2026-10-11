@@ -24,15 +24,18 @@ function firstSignalKeys(messages, patterns) {
   return first
 }
 
-export default function AnalyzedConversation({ messages, patterns = [] }) {
+export default function AnalyzedConversation({
+  messages,
+  patterns = [],
+  heading = 'Where the risk escalated',
+  description = 'See which messages introduced new manipulation signals.',
+}) {
   const firstSignals = firstSignalKeys(messages, patterns)
 
   return (
     <section>
-      <h2 className="text-lg font-semibold tracking-tight text-slate-950">Where the risk escalated</h2>
-      <p className="mt-1 text-sm leading-relaxed text-slate-500">
-        See which messages introduced new manipulation signals.
-      </p>
+      <h2 className="text-lg font-semibold tracking-tight text-slate-950">{heading}</h2>
+      <p className="mt-1 text-sm leading-relaxed text-slate-500">{description}</p>
       <ol className="mt-4 space-y-3">
         {messages.map((message, index) => {
           const findings = patterns.filter((pattern) => pattern.messageIndex === index)

@@ -16,7 +16,7 @@ export default function Header({ onHome }) {
             <span className="block text-base font-semibold tracking-tight text-slate-950">
               ScamTrail
             </span>
-            <span className="block text-xs text-slate-500">Conversation pattern analysis</span>
+            <span className="block text-xs text-slate-500">Live conversation protection</span>
           </span>
         </button>
       </div>

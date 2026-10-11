@@ -23,7 +23,7 @@ function toneFor(level) {
   }
 }
 
-export default function RiskScore({ score, level, summary }) {
+export default function RiskScore({ score, level, summary, eyebrow = 'Manipulation pattern analysis' }) {
   const tone = toneFor(level)
 
   return (
@@ -38,14 +38,14 @@ export default function RiskScore({ score, level, summary }) {
       <div
         className={`mt-4 h-2 overflow-hidden rounded-full ${tone.track}`}
         role="meter"
-        aria-label="Risk score"
+        aria-label={eyebrow}
         aria-valuemin={0}
         aria-valuemax={100}
         aria-valuenow={score}
       >
         <div className={`h-full rounded-full ${tone.fill}`} style={{ width: `${score}%` }} />
       </div>
-      <p className="mt-4 text-sm font-medium text-slate-500">Manipulation pattern analysis</p>
+      <p className="mt-4 text-sm font-medium text-slate-500">{eyebrow}</p>
       {summary ? (
         <p className="mt-3 max-w-2xl text-sm leading-relaxed text-slate-700 sm:text-base">{summary}</p>
       ) : null}

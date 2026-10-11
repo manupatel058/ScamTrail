@@ -43,13 +43,36 @@ body {
   animation: stage-in 0.4s ease both;
 }
 
+.risk-meter-fill {
+  transition: width 0.6s ease;
+}
+
+.mic-live {
+  animation: mic-pulse 1.4s ease-in-out infinite;
+}
+
+@keyframes mic-pulse {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.35;
+  }
+}
+
 @media (prefers-reduced-motion: reduce) {
   html {
     scroll-behavior: auto;
   }
 
   .rise,
-  .stage-detected {
+  .stage-detected,
+  .mic-live {
     animation: none;
+  }
+
+  .risk-meter-fill {
+    transition: none;
   }
 }

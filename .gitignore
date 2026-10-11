@@ -12,6 +12,16 @@ dist
 dist-ssr
 *.local
 
+# Python environment and Hugging Face downloads
+ml/.venv/
+.venv/
+.cache/
+huggingface/
+.huggingface/
+*.arrow
+data/**/*.parquet
+data/**/*.jsonl.zst
+
 # Editor directories and files
 .vscode/*
 !.vscode/extensions.json

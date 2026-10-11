@@ -1,0 +1,861 @@
+{
+  "threshold": 0.5,
+  "threshold_note": "Comparison uses 0.50. The threshold was not lowered to improve the out-of-distribution stress test.",
+  "v1_official": {
+    "source": "ml/models/training_metadata.json from the V1 training run",
+    "validation_metrics": {
+      "accuracy": 0.795447,
+      "precision": 0.938717,
+      "recall": 0.737063,
+      "f1": 0.825757,
+      "roc_auc": 0.924775,
+      "confusion_matrix": {
+        "labels": [
+          "NO",
+          "YES"
+        ],
+        "matrix": [
+          [
+            54012,
+            5500
+          ],
+          [
+            30054,
+            84247
+          ]
+        ]
+      },
+      "class_distribution": {
+        "NO": 59512,
+        "YES": 114301
+      }
+    },
+    "test_metrics": {
+      "accuracy": 0.778676,
+      "precision": 0.937344,
+      "recall": 0.70126,
+      "f1": 0.802295,
+      "roc_auc": 0.918707,
+      "confusion_matrix": {
+        "labels": [
+          "NO",
+          "YES"
+        ],
+        "matrix": [
+          [
+            59272,
+            5398
+          ],
+          [
+            34402,
+            80755
+          ]
+        ]
+      },
+      "class_distribution": {
+        "NO": 64670,
+        "YES": 115157
+      }
+    },
+    "streaming_validation": {
+      "conversations": 4499,
+      "fraud_conversations_with_yes_onset": 4450,
+      "conversations_without_yes_onset": 49,
+      "early_model_detection_percent": 11.662921,
+      "at_ground_truth_onset_percent": 28.629213,
+      "after_ground_truth_onset_percent": 48.629213,
+      "never_detected_percent": 11.078652,
+      "early_model_detection_count": 519,
+      "at_ground_truth_onset_count": 1274,
+      "after_ground_truth_onset_count": 2164,
+      "never_detected_count": 493,
+      "median_detection_delay_seconds": 6.0,
+      "detected_conversations": 3957,
+      "median_max_predicted_probability": 0.942933,
+      "median_final_predicted_probability": 0.930547,
+      "threshold": 0.5,
+      "note": "A probability crossing before the ground-truth YES chunk is early model detection. It is not automatically a successful early detection, because it can also be an early false alarm."
+    },
+    "streaming_test": {
+      "conversations": 4499,
+      "fraud_conversations_with_yes_onset": 4450,
+      "conversations_without_yes_onset": 49,
+      "early_model_detection_percent": 13.932584,
+      "at_ground_truth_onset_percent": 27.123596,
+      "after_ground_truth_onset_percent": 41.932584,
+      "never_detected_percent": 17.011236,
+      "early_model_detection_count": 620,
+      "at_ground_truth_onset_count": 1207,
+      "after_ground_truth_onset_count": 1866,
+      "never_detected_count": 757,
+      "median_detection_delay_seconds": 3.0,
+      "detected_conversations": 3693,
+      "median_max_predicted_probability": 0.926299,
+      "median_final_predicted_probability": 0.910823,
+      "threshold": 0.5,
+      "note": "A probability crossing before the ground-truth YES chunk is early model detection. It is not automatically a successful early detection, because it can also be an early false alarm."
+    }
+  },
+  "v2_official": {
+    "validation_metrics": {
+      "accuracy": 0.804612,
+      "precision": 0.93628,
+      "recall": 0.75421,
+      "f1": 0.83544,
+      "roc_auc": 0.926015,
+      "confusion_matrix": {
+        "labels": [
+          "NO",
+          "YES"
+        ],
+        "matrix": [
+          [
+            53645,
+            5867
+          ],
+          [
+            28094,
+            86207
+          ]
+        ]
+      },
+      "class_distribution": {
+        "NO": 59512,
+        "YES": 114301
+      }
+    },
+    "test_metrics": {
+      "accuracy": 0.778037,
+      "precision": 0.936054,
+      "recall": 0.701295,
+      "f1": 0.801845,
+      "roc_auc": 0.91468,
+      "confusion_matrix": {
+        "labels": [
+          "NO",
+          "YES"
+        ],
+        "matrix": [
+          [
+            59153,
+            5517
+          ],
+          [
+            34398,
+            80759
+          ]
+        ]
+      },
+      "class_distribution": {
+        "NO": 64670,
+        "YES": 115157
+      }
+    },
+    "streaming_validation": {
+      "conversations": 4499,
+      "fraud_conversations_with_yes_onset": 4450,
+      "conversations_without_yes_onset": 49,
+      "early_model_detection_percent": 13.191011,
+      "at_ground_truth_onset_percent": 35.955056,
+      "after_ground_truth_onset_percent": 38.539326,
+      "never_detected_percent": 12.314607,
+      "early_model_detection_count": 587,
+      "at_ground_truth_onset_count": 1600,
+      "after_ground_truth_onset_count": 1715,
+      "never_detected_count": 548,
+      "median_detection_delay_seconds": 0.0,
+      "detected_conversations": 3902,
+      "median_max_predicted_probability": 0.921899,
+      "median_final_predicted_probability": 0.898672,
+      "threshold": 0.5,
+      "note": "A probability crossing before the ground-truth YES chunk is early model detection. It is not automatically a successful early detection, because it can also be an early false alarm."
+    },
+    "streaming_test": {
+      "conversations": 4499,
+      "fraud_conversations_with_yes_onset": 4450,
+      "conversations_without_yes_onset": 49,
+      "early_model_detection_percent": 14.359551,
+      "at_ground_truth_onset_percent": 34.561798,
+      "after_ground_truth_onset_percent": 30.539326,
+      "never_detected_percent": 20.539326,
+      "early_model_detection_count": 639,
+      "at_ground_truth_onset_count": 1538,
+      "after_ground_truth_onset_count": 1359,
+      "never_detected_count": 914,
+      "median_detection_delay_seconds": 0.0,
+      "detected_conversations": 3536,
+      "median_max_predicted_probability": 0.892146,
+      "median_final_predicted_probability": 0.861797,
+      "threshold": 0.5,
+      "note": "A probability crossing before the ground-truth YES chunk is early model detection. It is not automatically a successful early detection, because it can also be an early false alarm."
+    }
+  },
+  "v1_ood": {
+    "threshold": 0.5,
+    "decision": "final turn",
+    "scams_detected": 0,
+    "scams_total": 20,
+    "normal_false_alarms": 0,
+    "normal_total": 10,
+    "precision": 0.0,
+    "recall": 0.0,
+    "f1": 0.0,
+    "probabilities": [
+      {
+        "id": "obvious-bank",
+        "kind": "obvious",
+        "expected": "SCAM",
+        "final_probability": 0.020527,
+        "predicted_scam": false
+      },
+      {
+        "id": "obvious-tech",
+        "kind": "obvious",
+        "expected": "SCAM",
+        "final_probability": 0.197454,
+        "predicted_scam": false
+      },
+      {
+        "id": "obvious-tax",
+        "kind": "obvious",
+        "expected": "SCAM",
+        "final_probability": 0.187841,
+        "predicted_scam": false
+      },
+      {
+        "id": "obvious-job",
+        "kind": "obvious",
+        "expected": "SCAM",
+        "final_probability": 0.053563,
+        "predicted_scam": false
+      },
+      {
+        "id": "obvious-market",
+        "kind": "obvious",
+        "expected": "SCAM",
+        "final_probability": 0.044497,
+        "predicted_scam": false
+      },
+      {
+        "id": "obvious-family",
+        "kind": "obvious",
+        "expected": "SCAM",
+        "final_probability": 0.044926,
+        "predicted_scam": false
+      },
+      {
+        "id": "obvious-utility",
+        "kind": "obvious",
+        "expected": "SCAM",
+        "final_probability": 0.066282,
+        "predicted_scam": false
+      },
+      {
+        "id": "obvious-prize",
+        "kind": "obvious",
+        "expected": "SCAM",
+        "final_probability": 0.019296,
+        "predicted_scam": false
+      },
+      {
+        "id": "obvious-account",
+        "kind": "obvious",
+        "expected": "SCAM",
+        "final_probability": 0.039437,
+        "predicted_scam": false
+      },
+      {
+        "id": "obvious-loan",
+        "kind": "obvious",
+        "expected": "SCAM",
+        "final_probability": 0.034084,
+        "predicted_scam": false
+      },
+      {
+        "id": "subtle-bank",
+        "kind": "subtle",
+        "expected": "SCAM",
+        "final_probability": 0.112844,
+        "predicted_scam": false
+      },
+      {
+        "id": "subtle-tech",
+        "kind": "subtle",
+        "expected": "SCAM",
+        "final_probability": 0.37663,
+        "predicted_scam": false
+      },
+      {
+        "id": "subtle-tax",
+        "kind": "subtle",
+        "expected": "SCAM",
+        "final_probability": 0.000941,
+        "predicted_scam": false
+      },
+      {
+        "id": "subtle-job",
+        "kind": "subtle",
+        "expected": "SCAM",
+        "final_probability": 0.006524,
+        "predicted_scam": false
+      },
+      {
+        "id": "subtle-market",
+        "kind": "subtle",
+        "expected": "SCAM",
+        "final_probability": 0.007937,
+        "predicted_scam": false
+      },
+      {
+        "id": "subtle-family",
+        "kind": "subtle",
+        "expected": "SCAM",
+        "final_probability": 0.039277,
+        "predicted_scam": false
+      },
+      {
+        "id": "subtle-utility",
+        "kind": "subtle",
+        "expected": "SCAM",
+        "final_probability": 0.009366,
+        "predicted_scam": false
+      },
+      {
+        "id": "subtle-prize",
+        "kind": "subtle",
+        "expected": "SCAM",
+        "final_probability": 0.006647,
+        "predicted_scam": false
+      },
+      {
+        "id": "subtle-account",
+        "kind": "subtle",
+        "expected": "SCAM",
+        "final_probability": 0.013759,
+        "predicted_scam": false
+      },
+      {
+        "id": "subtle-loan",
+        "kind": "subtle",
+        "expected": "SCAM",
+        "final_probability": 0.005185,
+        "predicted_scam": false
+      },
+      {
+        "id": "normal-bank",
+        "kind": "normal",
+        "expected": "NORMAL",
+        "final_probability": 0.00166,
+        "predicted_scam": false
+      },
+      {
+        "id": "normal-doctor",
+        "kind": "normal",
+        "expected": "NORMAL",
+        "final_probability": 0.000701,
+        "predicted_scam": false
+      },
+      {
+        "id": "normal-interview",
+        "kind": "normal",
+        "expected": "NORMAL",
+        "final_probability": 0.042843,
+        "predicted_scam": false
+      },
+      {
+        "id": "normal-utility",
+        "kind": "normal",
+        "expected": "NORMAL",
+        "final_probability": 0.000493,
+        "predicted_scam": false
+      },
+      {
+        "id": "normal-purchase",
+        "kind": "normal",
+        "expected": "NORMAL",
+        "final_probability": 0.009493,
+        "predicted_scam": false
+      },
+      {
+        "id": "normal-friend",
+        "kind": "normal",
+        "expected": "NORMAL",
+        "final_probability": 0.017884,
+        "predicted_scam": false
+      },
+      {
+        "id": "normal-reset",
+        "kind": "normal",
+        "expected": "NORMAL",
+        "final_probability": 0.009202,
+        "predicted_scam": false
+      },
+      {
+        "id": "normal-university",
+        "kind": "normal",
+        "expected": "NORMAL",
+        "final_probability": 0.00868,
+        "predicted_scam": false
+      },
+      {
+        "id": "normal-delivery",
+        "kind": "normal",
+        "expected": "NORMAL",
+        "final_probability": 0.001486,
+        "predicted_scam": false
+      },
+      {
+        "id": "normal-support",
+        "kind": "normal",
+        "expected": "NORMAL",
+        "final_probability": 0.040986,
+        "predicted_scam": false
+      }
+    ]
+  },
+  "v2_ood": {
+    "threshold": 0.5,
+    "decision": "final turn",
+    "scams_detected": 1,
+    "scams_total": 20,
+    "normal_false_alarms": 0,
+    "normal_total": 10,
+    "precision": 1.0,
+    "recall": 0.05,
+    "f1": 0.095238,
+    "probabilities": [
+      {
+        "id": "obvious-bank",
+        "kind": "obvious",
+        "expected": "SCAM",
+        "final_probability": 0.010785,
+        "predicted_scam": false
+      },
+      {
+        "id": "obvious-tech",
+        "kind": "obvious",
+        "expected": "SCAM",
+        "final_probability": 0.482873,
+        "predicted_scam": false
+      },
+      {
+        "id": "obvious-tax",
+        "kind": "obvious",
+        "expected": "SCAM",
+        "final_probability": 0.178694,
+        "predicted_scam": false
+      },
+      {
+        "id": "obvious-job",
+        "kind": "obvious",
+        "expected": "SCAM",
+        "final_probability": 0.313206,
+        "predicted_scam": false
+      },
+      {
+        "id": "obvious-market",
+        "kind": "obvious",
+        "expected": "SCAM",
+        "final_probability": 0.096736,
+        "predicted_scam": false
+      },
+      {
+        "id": "obvious-family",
+        "kind": "obvious",
+        "expected": "SCAM",
+        "final_probability": 0.025337,
+        "predicted_scam": false
+      },
+      {
+        "id": "obvious-utility",
+        "kind": "obvious",
+        "expected": "SCAM",
+        "final_probability": 0.055097,
+        "predicted_scam": false
+      },
+      {
+        "id": "obvious-prize",
+        "kind": "obvious",
+        "expected": "SCAM",
+        "final_probability": 0.050862,
+        "predicted_scam": false
+      },
+      {
+        "id": "obvious-account",
+        "kind": "obvious",
+        "expected": "SCAM",
+        "final_probability": 0.017827,
+        "predicted_scam": false
+      },
+      {
+        "id": "obvious-loan",
+        "kind": "obvious",
+        "expected": "SCAM",
+        "final_probability": 0.108639,
+        "predicted_scam": false
+      },
+      {
+        "id": "subtle-bank",
+        "kind": "subtle",
+        "expected": "SCAM",
+        "final_probability": 0.364889,
+        "predicted_scam": false
+      },
+      {
+        "id": "subtle-tech",
+        "kind": "subtle",
+        "expected": "SCAM",
+        "final_probability": 0.590031,
+        "predicted_scam": true
+      },
+      {
+        "id": "subtle-tax",
+        "kind": "subtle",
+        "expected": "SCAM",
+        "final_probability": 0.012691,
+        "predicted_scam": false
+      },
+      {
+        "id": "subtle-job",
+        "kind": "subtle",
+        "expected": "SCAM",
+        "final_probability": 0.011967,
+        "predicted_scam": false
+      },
+      {
+        "id": "subtle-market",
+        "kind": "subtle",
+        "expected": "SCAM",
+        "final_probability": 0.017922,
+        "predicted_scam": false
+      },
+      {
+        "id": "subtle-family",
+        "kind": "subtle",
+        "expected": "SCAM",
+        "final_probability": 0.063171,
+        "predicted_scam": false
+      },
+      {
+        "id": "subtle-utility",
+        "kind": "subtle",
+        "expected": "SCAM",
+        "final_probability": 0.012448,
+        "predicted_scam": false
+      },
+      {
+        "id": "subtle-prize",
+        "kind": "subtle",
+        "expected": "SCAM",
+        "final_probability": 0.003162,
+        "predicted_scam": false
+      },
+      {
+        "id": "subtle-account",
+        "kind": "subtle",
+        "expected": "SCAM",
+        "final_probability": 0.014076,
+        "predicted_scam": false
+      },
+      {
+        "id": "subtle-loan",
+        "kind": "subtle",
+        "expected": "SCAM",
+        "final_probability": 0.02239,
+        "predicted_scam": false
+      },
+      {
+        "id": "normal-bank",
+        "kind": "normal",
+        "expected": "NORMAL",
+        "final_probability": 0.001477,
+        "predicted_scam": false
+      },
+      {
+        "id": "normal-doctor",
+        "kind": "normal",
+        "expected": "NORMAL",
+        "final_probability": 0.000226,
+        "predicted_scam": false
+      },
+      {
+        "id": "normal-interview",
+        "kind": "normal",
+        "expected": "NORMAL",
+        "final_probability": 0.051321,
+        "predicted_scam": false
+      },
+      {
+        "id": "normal-utility",
+        "kind": "normal",
+        "expected": "NORMAL",
+        "final_probability": 0.00285,
+        "predicted_scam": false
+      },
+      {
+        "id": "normal-purchase",
+        "kind": "normal",
+        "expected": "NORMAL",
+        "final_probability": 0.020784,
+        "predicted_scam": false
+      },
+      {
+        "id": "normal-friend",
+        "kind": "normal",
+        "expected": "NORMAL",
+        "final_probability": 0.025484,
+        "predicted_scam": false
+      },
+      {
+        "id": "normal-reset",
+        "kind": "normal",
+        "expected": "NORMAL",
+        "final_probability": 0.00375,
+        "predicted_scam": false
+      },
+      {
+        "id": "normal-university",
+        "kind": "normal",
+        "expected": "NORMAL",
+        "final_probability": 0.006898,
+        "predicted_scam": false
+      },
+      {
+        "id": "normal-delivery",
+        "kind": "normal",
+        "expected": "NORMAL",
+        "final_probability": 0.001225,
+        "predicted_scam": false
+      },
+      {
+        "id": "normal-support",
+        "kind": "normal",
+        "expected": "NORMAL",
+        "final_probability": 0.057983,
+        "predicted_scam": false
+      }
+    ]
+  },
+  "previously_reported_v1_ood": {
+    "scams_detected": 0,
+    "scams_total": 20,
+    "normal_false_alarms": 0,
+    "normal_total": 10,
+    "note": "Reported from the earlier V1 stress test. This file also stores a fresh V1 rescore."
+  },
+  "lexicon_minimal_pairs": [
+    {
+      "phrase": "fraud",
+      "carrier": "Good morning. This is a short note from the office.",
+      "v1_carrier": 0.000955,
+      "v1_with_phrase": 0.000351,
+      "v1_delta": -0.000604,
+      "v2_carrier": 0.00069,
+      "v2_with_phrase": 0.000241,
+      "v2_delta": -0.000449
+    },
+    {
+      "phrase": "bank fraud",
+      "carrier": "Good morning. This is a short note from the office.",
+      "v1_carrier": 0.000955,
+      "v1_with_phrase": 0.000138,
+      "v1_delta": -0.000817,
+      "v2_carrier": 0.00069,
+      "v2_with_phrase": 0.000171,
+      "v2_delta": -0.00052
+    },
+    {
+      "phrase": "verification code",
+      "carrier": "Good morning. This is a short note from the office.",
+      "v1_carrier": 0.000955,
+      "v1_with_phrase": 0.002161,
+      "v1_delta": 0.001206,
+      "v2_carrier": 0.00069,
+      "v2_with_phrase": 0.004163,
+      "v2_delta": 0.003472
+    },
+    {
+      "phrase": "password",
+      "carrier": "Good morning. This is a short note from the office.",
+      "v1_carrier": 0.000955,
+      "v1_with_phrase": 0.014677,
+      "v1_delta": 0.013722,
+      "v2_carrier": 0.00069,
+      "v2_with_phrase": 0.031975,
+      "v2_delta": 0.031285
+    },
+    {
+      "phrase": "immediately",
+      "carrier": "Good morning. This is a short note from the office.",
+      "v1_carrier": 0.000955,
+      "v1_with_phrase": 0.130643,
+      "v1_delta": 0.129688,
+      "v2_carrier": 0.00069,
+      "v2_with_phrase": 0.356332,
+      "v2_delta": 0.355642
+    },
+    {
+      "phrase": "suspended",
+      "carrier": "Good morning. This is a short note from the office.",
+      "v1_carrier": 0.000955,
+      "v1_with_phrase": 0.109939,
+      "v1_delta": 0.108985,
+      "v2_carrier": 0.00069,
+      "v2_with_phrase": 0.395074,
+      "v2_delta": 0.394383
+    },
+    {
+      "phrase": "gift card",
+      "carrier": "Good morning. This is a short note from the office.",
+      "v1_carrier": 0.000955,
+      "v1_with_phrase": 0.00711,
+      "v1_delta": 0.006155,
+      "v2_carrier": 0.00069,
+      "v2_with_phrase": 0.010309,
+      "v2_delta": 0.009619
+    },
+    {
+      "phrase": "gift cards",
+      "carrier": "Good morning. This is a short note from the office.",
+      "v1_carrier": 0.000955,
+      "v1_with_phrase": 0.006732,
+      "v1_delta": 0.005778,
+      "v2_carrier": 0.00069,
+      "v2_with_phrase": 0.017176,
+      "v2_delta": 0.016486
+    },
+    {
+      "phrase": "wire transfer",
+      "carrier": "Good morning. This is a short note from the office.",
+      "v1_carrier": 0.000955,
+      "v1_with_phrase": 0.000824,
+      "v1_delta": -0.000131,
+      "v2_carrier": 0.00069,
+      "v2_with_phrase": 0.000696,
+      "v2_delta": 6e-06
+    },
+    {
+      "phrase": "one-time code",
+      "carrier": "Good morning. This is a short note from the office.",
+      "v1_carrier": 0.000955,
+      "v1_with_phrase": 0.004495,
+      "v1_delta": 0.00354,
+      "v2_carrier": 0.00069,
+      "v2_with_phrase": 0.004911,
+      "v2_delta": 0.004221
+    },
+    {
+      "phrase": "urgent",
+      "carrier": "Good morning. This is a short note from the office.",
+      "v1_carrier": 0.000955,
+      "v1_with_phrase": 0.038171,
+      "v1_delta": 0.037216,
+      "v2_carrier": 0.00069,
+      "v2_with_phrase": 0.097937,
+      "v2_delta": 0.097247
+    },
+    {
+      "phrase": "do not hang up",
+      "carrier": "Good morning. This is a short note from the office.",
+      "v1_carrier": 0.000955,
+      "v1_with_phrase": 0.003515,
+      "v1_delta": 0.00256,
+      "v2_carrier": 0.00069,
+      "v2_with_phrase": 0.001908,
+      "v2_delta": 0.001218
+    },
+    {
+      "phrase": "don't hang up",
+      "carrier": "Good morning. This is a short note from the office.",
+      "v1_carrier": 0.000955,
+      "v1_with_phrase": 0.002594,
+      "v1_delta": 0.001639,
+      "v2_carrier": 0.00069,
+      "v2_with_phrase": 0.001753,
+      "v2_delta": 0.001062
+    }
+  ],
+  "training_snapshot_counts": {
+    "original_icfd_training_chunks": 712316,
+    "retained_training_chunks": 178866,
+    "percentage_retained": 25.1105,
+    "average_retained_snapshots_per_conversation": 8.5191
+  },
+  "conversation_weighting_strategy": "Each retained snapshot in conversation i gets base weight 1/n_i, so the conversation's base weights sum to 1. Let M_k be the sum of base weights on label k. class_factor_k = (M_0 + M_1) / (2 * M_k), which makes the total weight on YES equal the total weight on NO. unnormalized = base * class_factor[label]. final = unnormalized / mean(unnormalized), so the mean sample weight is 1 and the default L2 penalty stays on the usual scale. The global rescale does not change conversation ratios or the equal class totals. class_weight is left unset, because sklearn's balanced mode uses row counts and would undo the conversation weights. A mixed conversation's total moves with its YES/NO mix, because pre-onset NO snapshots are not given the fraud class factor.",
+  "sample_weight_summary": {
+    "base_class_mass": {
+      "NO": 17162.213524421553,
+      "YES": 3833.7864755784467
+    },
+    "class_factor": {
+      "NO": 0.6116926575386977,
+      "YES": 2.7382850001879793
+    },
+    "mean_final_weight": 1.0,
+    "sum_final_weight_NO": 89433.0,
+    "sum_final_weight_YES": 89433.0,
+    "conversation_total_weight_min": 5.2110410975098445,
+    "conversation_total_weight_median": 5.211041097509846,
+    "conversation_total_weight_max": 23.3275902478388
+  },
+  "feature_configuration": {
+    "word": {
+      "analyzer": "word",
+      "ngram_range": [
+        1,
+        2
+      ],
+      "min_df": 3,
+      "sublinear_tf": true,
+      "max_features": 50000,
+      "vocabulary_size": 50000
+    },
+    "char": {
+      "analyzer": "char_wb",
+      "ngram_range": [
+        3,
+        5
+      ],
+      "min_df": 3,
+      "sublinear_tf": true,
+      "max_features": 20000,
+      "vocabulary_size": 20000
+    }
+  },
+  "classifier": {
+    "solver": "saga",
+    "l1_ratio": 0.0,
+    "penalty": "l2",
+    "class_weight": null,
+    "max_iter": 1000,
+    "random_state": 42,
+    "iterations_run": 157,
+    "sample_weight": true
+  },
+  "external_data": "External dataset required",
+  "training_duration_seconds": 360.1,
+  "model_bytes": {
+    "v1": 4890116,
+    "v2": 2705568
+  },
+  "snapshot_strategy": {
+    "interval_seconds": 15,
+    "always_keep": [
+      "first snapshot",
+      "final snapshot",
+      "first YES snapshot",
+      "snapshot immediately before onset",
+      "snapshot immediately after onset"
+    ],
+    "additional": "A later snapshot is kept when chunk_timestamp has advanced at least 15 seconds since the last kept snapshot."
+  },
+  "limitations": [
+    "V2 training used the official ICFD train split only. Validation and test were not fit.",
+    "Official validation contains fraud case types only. Official test contains Clear Fraud only. NO labels there are pre-onset chunks, not benign calls.",
+    "No external labeled scam or legitimate dataset was available locally, so V2 is ICFD-only.",
+    "The 30 stress-test conversations were scored after training and were not used to fit, augment, or choose features.",
+    "Character and word features share one linear model, so a phrase does not have a single coefficient.",
+    "V2 is not connected to /api/risk, the React app, or Gemini.",
+    "No production threshold was selected."
+  ]
+}

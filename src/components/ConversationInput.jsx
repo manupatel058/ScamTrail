@@ -1,3 +1,5 @@
+import ExplanationNotice from './ExplanationNotice.jsx'
+
 export default function ConversationInput({
   value,
   onChange,
@@ -5,6 +7,8 @@ export default function ConversationInput({
   loading = false,
   error = '',
   errorDetail = '',
+  notice = null,
+  riskNote = '',
 }) {
   const canAnalyze = value.trim().length > 0 && !loading
 
@@ -27,9 +31,11 @@ export default function ConversationInput({
         readOnly={loading}
         className="min-h-64 w-full resize-y rounded-3xl border border-stone-200 bg-white px-4 py-4 text-base leading-relaxed text-slate-900 shadow-sm outline-none transition placeholder:text-slate-400 focus:border-slate-400 focus:ring-4 focus:ring-slate-900/5 sm:px-5 sm:py-5"
       />
-      {error ? (
+      {error || notice || riskNote ? (
         <div className="mt-4" role="alert">
-          <p className="text-sm leading-relaxed text-rose-800">{error}</p>
+          {notice ? <ExplanationNotice quota={notice.quota} fraudDetectionActive={notice.fraudDetectionActive} /> : null}
+          {riskNote ? <p className="mt-2 text-sm leading-relaxed text-slate-700">{riskNote}</p> : null}
+          {error ? <p className="text-sm leading-relaxed text-rose-800">{error}</p> : null}
           {import.meta.env.DEV && errorDetail ? (
             <p className="mt-1 text-xs leading-relaxed text-slate-500">{errorDetail}</p>
           ) : null}
@@ -41,7 +47,7 @@ export default function ConversationInput({
         aria-busy={loading}
         className="mt-4 w-full rounded-2xl bg-slate-900 px-5 py-3.5 text-base font-medium text-white transition hover:bg-slate-800 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-slate-900 focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:bg-slate-300"
       >
-        {loading ? 'Mapping conversation patterns...' : error ? 'Retry' : 'Analyze Conversation'}
+        {loading ? 'Mapping conversation patterns...' : error || notice || riskNote ? 'Retry' : 'Analyze Conversation'}
       </button>
     </form>
   )

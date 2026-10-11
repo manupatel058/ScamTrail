@@ -1,0 +1,184 @@
+{
+  "model_type": "TfidfVectorizer + LogisticRegression Pipeline",
+  "dataset_name": "rishia2220/icfd-31k",
+  "dataset_configuration": "default",
+  "training_split": "train",
+  "number_of_training_chunks": 712316,
+  "number_of_unique_training_conversations": 20996,
+  "average_chunks_per_training_conversation": 33.93,
+  "training_label_counts": {
+    "NO": 563251,
+    "YES": 149065
+  },
+  "label_mapping": {
+    "NO": 0,
+    "YES": 1
+  },
+  "input_column": "cumulative_text",
+  "target_column": "final_verdict",
+  "tfidf_settings": {
+    "ngram_range": [
+      1,
+      2
+    ],
+    "min_df": 3,
+    "max_df": 0.98,
+    "sublinear_tf": true,
+    "max_features": 100000
+  },
+  "logistic_regression_settings": {
+    "max_iter": 1000,
+    "class_weight": "balanced",
+    "solver": "saga",
+    "l1_ratio": 0.0,
+    "penalty": "l2",
+    "random_state": 42,
+    "iterations_run": 17,
+    "solver_reason": "saga is used instead of liblinear because the official train split has 712,316 sparse streaming rows."
+  },
+  "vocabulary_size": 100000,
+  "scikit_learn_version": "1.9.1",
+  "training_date": "2026-10-11",
+  "training_duration_seconds": 111.3,
+  "validation_metrics": {
+    "accuracy": 0.795447,
+    "precision": 0.938717,
+    "recall": 0.737063,
+    "f1": 0.825757,
+    "roc_auc": 0.924775,
+    "confusion_matrix": {
+      "labels": [
+        "NO",
+        "YES"
+      ],
+      "matrix": [
+        [
+          54012,
+          5500
+        ],
+        [
+          30054,
+          84247
+        ]
+      ]
+    },
+    "class_distribution": {
+      "NO": 59512,
+      "YES": 114301
+    }
+  },
+  "test_metrics": {
+    "accuracy": 0.778676,
+    "precision": 0.937344,
+    "recall": 0.70126,
+    "f1": 0.802295,
+    "roc_auc": 0.918707,
+    "confusion_matrix": {
+      "labels": [
+        "NO",
+        "YES"
+      ],
+      "matrix": [
+        [
+          59272,
+          5398
+        ],
+        [
+          34402,
+          80755
+        ]
+      ]
+    },
+    "class_distribution": {
+      "NO": 64670,
+      "YES": 115157
+    }
+  },
+  "validation_threshold_analysis": [
+    {
+      "threshold": 0.3,
+      "precision": 0.915059,
+      "recall": 0.833457,
+      "f1": 0.872354
+    },
+    {
+      "threshold": 0.4,
+      "precision": 0.927249,
+      "recall": 0.785129,
+      "f1": 0.850291
+    },
+    {
+      "threshold": 0.5,
+      "precision": 0.938717,
+      "recall": 0.737063,
+      "f1": 0.825757
+    },
+    {
+      "threshold": 0.6,
+      "precision": 0.948768,
+      "recall": 0.683397,
+      "f1": 0.79451
+    },
+    {
+      "threshold": 0.7,
+      "precision": 0.958062,
+      "recall": 0.621578,
+      "f1": 0.753982
+    },
+    {
+      "threshold": 0.8,
+      "precision": 0.96705,
+      "recall": 0.544606,
+      "f1": 0.6968
+    }
+  ],
+  "threshold_selection": "No production threshold was selected. Test was not used for tuning.",
+  "streaming_validation": {
+    "conversations": 4499,
+    "fraud_conversations_with_yes_onset": 4450,
+    "conversations_without_yes_onset": 49,
+    "early_model_detection_percent": 11.662921,
+    "at_ground_truth_onset_percent": 28.629213,
+    "after_ground_truth_onset_percent": 48.629213,
+    "never_detected_percent": 11.078652,
+    "early_model_detection_count": 519,
+    "at_ground_truth_onset_count": 1274,
+    "after_ground_truth_onset_count": 2164,
+    "never_detected_count": 493,
+    "median_detection_delay_seconds": 6.0,
+    "detected_conversations": 3957,
+    "median_max_predicted_probability": 0.942933,
+    "median_final_predicted_probability": 0.930547,
+    "threshold": 0.5,
+    "note": "A probability crossing before the ground-truth YES chunk is early model detection. It is not automatically a successful early detection, because it can also be an early false alarm."
+  },
+  "streaming_test": {
+    "conversations": 4499,
+    "fraud_conversations_with_yes_onset": 4450,
+    "conversations_without_yes_onset": 49,
+    "early_model_detection_percent": 13.932584,
+    "at_ground_truth_onset_percent": 27.123596,
+    "after_ground_truth_onset_percent": 41.932584,
+    "never_detected_percent": 17.011236,
+    "early_model_detection_count": 620,
+    "at_ground_truth_onset_count": 1207,
+    "after_ground_truth_onset_count": 1866,
+    "never_detected_count": 757,
+    "median_detection_delay_seconds": 3.0,
+    "detected_conversations": 3693,
+    "median_max_predicted_probability": 0.926299,
+    "median_final_predicted_probability": 0.910823,
+    "threshold": 0.5,
+    "note": "A probability crossing before the ground-truth YES chunk is early model detection. It is not automatically a successful early detection, because it can also be an early false alarm."
+  },
+  "model_path": "/Users/mansipatel/ScamTrail/ml/models/scamtrail_tfidf_logreg.joblib",
+  "limitations": [
+    "Training used 20,996 conversations represented by 712,316 streaming snapshots. The chunks are not independent conversations.",
+    "Only cumulative_text was used as input. Later chunks repeat earlier text from the same conversation.",
+    "Validation contains fraud case types only. It can measure streaming onset detection and is not a complete false-positive evaluation on normal conversations.",
+    "Test contains Clear Fraud conversations only. NO labels there are pre-onset chunks, not benign calls. Test specificity is not performance on normal conversations.",
+    "The Hugging Face load has no cross_domain split.",
+    "No production probability threshold was selected, and the threshold table was computed on validation only.",
+    "The saved model is not connected to the React app, Gemini, or the JavaScript risk engine."
+  ]
+}
